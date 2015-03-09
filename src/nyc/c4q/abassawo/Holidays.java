@@ -11,25 +11,35 @@ public class Holidays {
         String holiday = null;
         int day = 0;
         String month;
-        System.out.print("What month is it?");
+        System.out.print("What month is it? ");
 
         month = input.next();
 
-        System.out.println("What day of the month is it?");
+        System.out.print("What day of the month is it? ");
         day = input.nextInt();
 
-        if (day == 1 && month .equalsIgnoreCase("January"))
-            holiday = "New Years Day";
-        else if (day == 5 && month .equalsIgnoreCase("May"))
+        if ( month .equalsIgnoreCase("January")
+            && day ==1)
+             holiday = "New Years Day";
+        else if (month .equalsIgnoreCase("May")
+            && day ==5)
             holiday = "Cinco de Mayo";
-        else if (day == 4 && month .equalsIgnoreCase("July"))
+        else if (month .equalsIgnoreCase("July")
+               && day == 4)
             holiday = "Independence Day";
-        else if (day == 25 && month .equalsIgnoreCase("December"))
-            holiday = "Christmas";
-        else if (day == 8 && month .equalsIgnoreCase("March"))
+        else if (month .equalsIgnoreCase("December")) {
+            if (day == 25)
+                holiday = "Christmas";
+                else if (day == 31)
+                holiday = "New Years eve";
+                else
+                holiday = "the holiday season";
+        }
+        else if (month .equalsIgnoreCase("March")
+                && day ==8)
             holiday = "International Women's Day..and Abass' Bday";
-        else {
-            System.out.println("Today is " + month + " " + day);
+        else { //nb: braces necessary here
+            System.out.println("Today is " + month + " " + day + " It is not a holiday");
             return;
         }
         System.out.println("Today is " + month + " " + day + "," + " Happy " + holiday);
